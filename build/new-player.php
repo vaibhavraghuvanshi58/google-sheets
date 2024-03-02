@@ -61,7 +61,7 @@
             var genders = document.getElementsByName('gender');
             var gender= "Male";
             for(var i = 0 ; i < genders.length ; i++){
-                if(genders[i].Checked){
+                if(genders[i].checked){
                     gender = genders[i].value;
                 }
             }

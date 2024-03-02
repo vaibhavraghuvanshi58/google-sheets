@@ -1,0 +1,70 @@
+ body{
+            margin:0px;
+        }
+.header{
+    height:100px;
+    background-color:#5db9da;
+}
+.center{
+text-align:center;
+}
+.apptext{
+line-height:100px;
+color:white;
+font-size:40px;
+text-transform:uppercase;
+}
+.menubar{
+    display:flex;
+}
+.menuitem{
+    width:200px;
+    height:40px;
+    line-height:40px;
+    font-size:20px;
+    text-align:center;
+    background-color:#b3bfe4;
+}
+
+table{
+        width:1000px;
+        font-size:20px;
+        margin-top:50px;
+        line-height:50px;
+     }
+input[type=text],input[type=number]{
+    width:300px;
+    height:30px;
+    font-size:20px;
+    outline:none;
+}
+select{
+    width:300px;
+    height:30px;
+    font-size:20px;
+}
+button{
+    padding:10px 50px;
+    font-size:20px;
+    background-color:green;
+    color:white;
+    border-radius:10px;
+}
+
+ .heading{
+        font-size:25px;
+        font-weight:800;
+        text-transform:uppercase;
+        width:300px;
+        color:#4bb1e2;
+    }
+    .headingvalue{
+        font-size:25px;
+        letter-spacing:1px;
+        color:red;
+    }
+    table#player_run tr:nth-of-type(even) {background: #cdd0db;}
+    table#player_run tr:nth-of-type(odd) {background: #e4e8e4;}
+    table#player_run td{
+    text-align:center;
+    }

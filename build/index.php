@@ -95,45 +95,10 @@
                         <td class="headingvalue"><?php echo $rows[0]['PLAYERNAME'] ?> - <?php echo $rows[0]['PLAYERCOUNTRY'] ?> [<?php echo $rows[0]['TOTALRUN'] ?>]</td>
                         <?php }  ?>
                     </tr>
-
                 </table>
         </div>
-
     </div>
-
-    <div style="margin-left:100px;">
-        <table align="left" id="player_run">
-            <tr>
-                <td colspan="6" style="text-align:center;font-weight:800;font-size:30px;text-transform:uppercase;"> All Players Runs </td>
-            </tr>
-
-            <tr class="tableheader">
-                <th>Player Name</th>
-                <th>Player Country</th>
-                <th>Total Run</th>
-            </tr>
-            <?php
-               include_once "db.php";
-               $count = 0;
-               $rows = "";
-               try{
-               $conn =  getConnection();
-               $stmt = $conn->query('SELECT PLAYERS.PLAYERID,PLAYERS.PLAYERNAME,PLAYERS.PLAYERCOUNTRY,SUM(RUNS.TOTALRUN) as TOTALRUN FROM `RUNS`, PLAYERS WHERE RUNS.PLAYERID=PLAYERS.PLAYERID  group by RUNS.PLAYERID ;');
-               $rows = $stmt->fetchAll();
-                foreach($rows as $row) {
-                 ?>
-                  <tr>
-                     <td><a href="view-runs.php?playerid=<?php echo $row['PLAYERID'] ?>"><?php echo $row['PLAYERNAME'] ?></a></td>
-                     <td><?php echo $row['PLAYERCOUNTRY'] ?></td>
-                     <td><?php echo $row['TOTALRUN'] ?></td>
-                  </tr>
-               <?php }
-                }catch(Exception $e){
-
-                }
-            ?>
-        </table>
-    </div>
+    <iframe src="allplayer-run.php" style="width:100%;height:400px;border:0px;" scrolling></iframe>
   </div>
 <?php include_once "footer.php" ?>
 </body>

@@ -93,6 +93,23 @@
             var playerSixes = document.getElementById('playersixes').value;
             var innDate = document.getElementById('playerYear').value;
 
+            if(innDate == ""){
+                document.getElementById('errormsg').innerHTML = "Match Date Required.";
+                return ;
+            }
+
+            // Validations
+            // Ball should not be less then 4 and 6s
+           if(parseInt(playerBalls) < (parseInt(playerSixes)+parseInt(playerFours))){
+                document.getElementById('errormsg').innerHTML = "Total Balls should be more then sum of fours and sixes";
+                return ;
+           }
+
+            if(parseInt(playerRun) < ((parseInt(playerFours)*4) + parseInt(playerSixes)*6)){
+                document.getElementById('errormsg').innerHTML = "Total Runs should be more then sum of fours and sixes Runs";
+                return ;
+           }
+
             params = "p1="+playerName+"&p2="+playerCountry+"&p3="+playerRun+"&p4="+playerBalls+"&p5="+playerFours+"&p6="+playerSixes+"&p7="+innDate;
             var http = new XMLHttpRequest();
             http.onreadystatechange = function() {
